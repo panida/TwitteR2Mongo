@@ -59,7 +59,7 @@ updateHometimeline <-
       json_data <- jsonlite::fromJSON(filename)
 
 
-      Sys.setlocale("LC_TIME", "English")
+      #Sys.setlocale("LC_TIME", "English")
       if (is.data.frame(json_data)) {
         max_id <- (min(json_data$id) - 65)
         json_data$timestamp_ms <-
