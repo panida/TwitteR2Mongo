@@ -75,5 +75,6 @@ makeOAuth <-
     }
     myapp <- httr::oauth_app("twitter", key = key, secret = secret)
     twitter_token = token_func(myapp, access_token, access_secret)
+    assign("oauth_token", twitter_token, envir=oauth_cache)
     return (twitter_token)
   }
