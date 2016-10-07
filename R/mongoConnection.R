@@ -26,13 +26,13 @@ setMongoDbCredentials <- function(type, collection, db, url) {
   if (type == "hometimeline") {
     Sys.setenv(
       collection_home = "hometimeline", db_home = "twitter",
-      url_home = "mongodb://localhost"
+      url_home = url
     )
   }
   else if (type == "filterstream") {
     Sys.setenv(
       collection_filter = "filterstream", db_filter = "twitter",
-      url_filter = "mongodb://localhost"
+      url_filter = url
     )
   }
   else {
