@@ -86,7 +86,7 @@ startStreaming <- function(timeout = 60, query_url) {
         'Rscript -e "library(TwitteR2Mongo);streamingLoop(',timeout,',', as.character(2),')"'
       )
   }
-  system(command = command, wait = FALSE,  ignore.stdout = TRUE)
+  system(command = command, wait = FALSE,  ignore.stdout = TRUE,ignore.stderr = TRUE)
 }
 
 
@@ -165,7 +165,7 @@ streamingLoop <- function(timeout = 30, type, createLog = TRUE) {
     }
     command <-
       paste0("Rscript -e \"library(TwitteR2Mongo);import2mongo(",fileid,")\"")
-    system(command = command, wait = FALSE, ignore.stdout = TRUE)
+    system(command = command, wait = FALSE, ignore.stdout = TRUE,ignore.stderr = TRUE)
 
     # Check if stop is requested
     status <- file("stop_request.txt","rb")
