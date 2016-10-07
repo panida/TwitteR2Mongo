@@ -83,7 +83,7 @@ startStreaming <- function(timeout = 60, query_url) {
 
     command <-
       paste0(
-        "../Rscript -e library(TwitteR2Mongo);streamingLoop(",timeout,",", as.character(2),")"
+        "./Rscript -e library(TwitteR2Mongo);streamingLoop(",timeout,",", as.character(2),")"
       )
   }
   system(command = command, wait = FALSE)
