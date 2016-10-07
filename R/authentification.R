@@ -47,7 +47,7 @@ get_twitter_token_via_sign = function(app, access_token, access_secret) {
   params <- list(as_header = TRUE)
   credentials <- list(oauth_token = access_token, 
                       oauth_token_secret = access_secret)
-  twitter_token <- httr::Token1.0$new(endpoint = NULL, params = params, 
+  twitter_token <- httr::Token1.0$new(endpoint = httr::oauth_endpoints("twitter"), params = params, 
                                 app = app, credentials = credentials)
 
   if (is.null(twitter_token))
@@ -75,6 +75,5 @@ makeOAuth <-
     }
     myapp <- httr::oauth_app("twitter", key = key, secret = secret)
     twitter_token = token_func(myapp, access_token, access_secret)
-    assign("oauth_token", twitter_token, envir=oauth_cache)
     return (twitter_token)
   }
