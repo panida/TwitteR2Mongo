@@ -74,6 +74,6 @@ makeOAuth <-
       token_func = get_twitter_token_via_sign
     }
     myapp <- httr::oauth_app("twitter", key = key, secret = secret)
-    twitter_token = token_func(app, access_token, access_secret)
+    twitter_token = token_func(myapp, access_token, access_secret)
     return (twitter_token)
   }
