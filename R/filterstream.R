@@ -73,7 +73,7 @@ startStreaming <- function(timeout = 60, query_url) {
     print("Now starting stream based on the hashtags of the supplied users network")
     command <-
       paste0(
-        "Rscript -e library(TwitteR2Mongo);streamingLoop(",timeout,",", as.character(1),")"
+        "./Rscript -e library(TwitteR2Mongo);streamingLoop(",timeout,",", as.character(1),")"
       )
   }
 
@@ -83,7 +83,7 @@ startStreaming <- function(timeout = 60, query_url) {
 
     command <-
       paste0(
-        "Rscript -e library(TwitteR2Mongo);streamingLoop(",timeout,",", as.character(2),")"
+        "../Rscript -e library(TwitteR2Mongo);streamingLoop(",timeout,",", as.character(2),")"
       )
   }
   system(command = command, wait = FALSE)
